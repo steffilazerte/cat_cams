@@ -38,7 +38,9 @@ Path: /etc/ImageMagick-6/policy.xml
 ...
 ```
 
-Change the policy.xml file at this point:
+Open the `policy.xml` file and edit it.
+
+Change this:
 
 `<policy domain="resource" name="memory" value="256MiB"/>`
 
@@ -54,7 +56,11 @@ Then run `system("identify -list policy")` again to check that it has been updat
 ## 3. Change the folder locations
 In `stitch.R`, adjust the locations of `in_dir` to match the place where your photos are stored
 
-For example:
+```
+in_dir <- file.path("Catcam footage")
+```
+
+Example file structure in "Catcam footage" folder:
 
 ```
 > Catcam footage
@@ -77,13 +83,13 @@ For example:
            ...
 ```
 
-## 4. Change resume
+## 4. Change `resume`
 
 If you want to resume a run, use `resume = TRUE`
 
 ## 5. Run the entire `stitch.R` script
 
-## 6. Look in `Videos/IDNAME/` for the compiled video.
+## 6. Look in `Videos/IDNAME/` for the compiled video
 
 
 # Resources
