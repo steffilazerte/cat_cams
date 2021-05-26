@@ -54,7 +54,10 @@ Then run `system("identify -list policy")` again to check that it has been updat
 
 
 ## 3. Change the folder locations
-In `stitch.R`, adjust the locations of `in_dir` to match the place where your photos are stored
+In `stitch.R`, adjust the locations of `in_dir` to match the place where your photos are stored.
+
+> If you move them to a `Catcam footage` folder in the `cat_cams` folder you won't have to 
+> change the default value.
 
 ```
 in_dir <- file.path("Catcam footage")
@@ -86,6 +89,8 @@ Example file structure in "Catcam footage" folder:
 ## 4. Change `resume`
 
 If you want to resume a run, use `resume = TRUE`
+
+
 
 ## 5. Run the entire `stitch.R` script
 
