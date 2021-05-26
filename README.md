@@ -17,11 +17,14 @@ install.packages(c("magick", "tidyverse", "lubridate", "av"))
 
 - https://bigbinary.com/blog/configuring-memory-allocation-in-imagemagick
 
-In R, type the following, it should tell you where your "policy.xml" file is, 
-as well as your allocated memory
+In R, type the following
 ```
 system("identify -list policy")
+```
 
+It should tell you where your "policy.xml" file is, as well as your allocated memory
+
+```
 Path: /etc/ImageMagick-6/policy.xml
   Policy: Resource
     name: disk
