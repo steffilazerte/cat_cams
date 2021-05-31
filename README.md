@@ -6,6 +6,14 @@ videos.
 - `stitch.R` is the main script
 - `functions.R`
 
+## 0. Download the project
+- Use git, or click on the green Code button and download the zip file
+- Unzip
+- Open the *Project* in RStudio
+    - Double click on the `cat_cams.Rproj` file
+    - OR in RStudio, File > Open Project > Select the `cat_cams.Rproj` file
+    - This makes sure all the files are in the same *relative* location
+
 ## 1. Install packages
 To get started, first install `renv` and use it to restore the package versions used here:
 
