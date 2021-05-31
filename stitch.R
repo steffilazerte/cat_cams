@@ -7,6 +7,11 @@ in_dir <- file.path("Catcam footage") # Location of input files
 resume <- FALSE # Whether to overwrite existing files or resume from last file
                 # (unique to the file type)
 
+# Double check location - This should list the folders for individuals (e.g., "BUN12" "JOR11")
+list.files(in_dir)
+
+# If it does not, the location `in_dir` isn't specified correctly.
+
 # Get the functions for reading dates from the DATE.TXT file and for creating the videos
 source("functions.R")
 
@@ -18,6 +23,10 @@ if(!dir.exists(out_dir)) dir.create(out_dir)
 # Get batches
 f <- list.files(in_dir, pattern = "cap", full.names = TRUE, recursive = TRUE, include.dirs = TRUE)
 
+# Check - This should list the 'cap' folders and their locations. E.g., "Catcam footage/BUN12/4May2021/cap243"
+f
+
+# Get image files
 videos <- tibble(f = f) %>%
   mutate(cat = str_extract(f, "[A-Z]{3}[0-9]{2}"),
          batch = str_extract(f, "cap[0-9]+"),

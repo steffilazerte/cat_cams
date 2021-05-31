@@ -23,6 +23,12 @@ In R, type the following
 system("identify -list policy")
 ```
 
+If you run into problems here, 
+  - on Windows open your Command Prompt from the Quick Link menu
+  - on Mac open your Terminal by searching for "Terminal" in the Dock
+  
+Then, in either the Command Prompt or Terminal, type `identify -list policy` and hit enter.
+
 It should tell you where your "policy.xml" file is, as well as your allocated memory
 
 ```
