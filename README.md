@@ -7,10 +7,11 @@ videos.
 - `functions.R`
 
 ## 1. Install packages
-To get started, first install the following packages:
+To get started, first install `renv` and use it to restore the package versions used here:
 
 ```
-install.packages(c("magick", "tidyverse", "lubridate", "av"))
+install.packages("renv")
+renv::restore()
 ```
 
 ## 2. Increase memory allocated to Image Magick
