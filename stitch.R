@@ -53,10 +53,13 @@ videos <- tibble(f = f) %>%
   ungroup() %>%
   arrange(cat, batch, pic_n) %>%
   # Set video names and see if any have already been created
-  mutate(video_name = paste0(cat, "_", start, "_", batch, ".mp4"),
+  mutate(video_name = paste0(cat, "_", ymd(start), "_", batch, ".mp4"),
          created = file.exists(file.path(out_dir, cat, video_name))) %>%
   select(cat, batch, frame_rate, date, start, dur, gps, gps_error,
          pics, pic_n, video_name, created)
+
+# Find those with missing data.txt files
+filter(videos, is.na(dur))
 
 # Videos with no frames
 no_frames <- videos %>%
