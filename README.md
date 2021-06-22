@@ -22,7 +22,7 @@ install.packages("renv")
 renv::restore()
 ```
 
-## 2. Increase memory allocated to Image Magick
+## 2a. Increase memory allocated to Image Magick
 
 - https://bigbinary.com/blog/configuring-memory-allocation-in-imagemagick
 
@@ -67,6 +67,19 @@ to
 
 Then run `system("identify -list policy")` again to check that it has been updated
 
+## 2b. Increase number of files that can be open allocated to Image Magick
+
+Open the `policy.xml` file as above and edit this line:
+  
+`<!-- <policy domain="resource" name="file" value="768"/> -->`
+
+to
+
+`<policy domain="resource" name="file" value="2000"/>`
+
+> Note: That you'll need to remove the `<!--` and `-->` AND put in a value that
+> is appropriate to what you need (how many images do you need to process for 
+> a single video?)
 
 ## 3. Change the folder locations
 In `stitch.R`, adjust the locations of `in_dir` to match the place where your photos are stored.
